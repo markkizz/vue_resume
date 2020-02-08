@@ -4,9 +4,21 @@
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col class="justify-center">
-            <v-card class="elevation raised custom-card">
+            <v-card class="elevation raised custom-card" style="border-top-right-radius: 0">
               <Aboutme />
             </v-card>
+            <div class="tab">
+              <TabButton>
+                <v-icon large>
+                  fas fa-user-tie
+                </v-icon>
+              </TabButton>
+              <div class="tab tab-space">
+                <TabButton>
+                  <v-icon large>fas fa-university</v-icon>
+                </TabButton>
+              </div>
+            </div>
           </v-col>
         </v-row>
       </v-container>
@@ -16,12 +28,14 @@
 
 <script>
 import Aboutme from "./components/AboutMe";
+import { TabButton } from "./shared/TabButton";
 
 export default {
   name: "App",
 
   components: {
-    Aboutme
+    Aboutme,
+    TabButton
   },
 
   data() {
@@ -35,7 +49,6 @@ export default {
 </script>
 
 <style>
-
 .custom-card {
   padding: 1rem;
   height: 400px;
@@ -48,5 +61,13 @@ export default {
 .align-center {
   display: flex;
   align-items: center;
+}
+
+.tab {
+  position: relative;
+}
+
+.tab-space {
+  top: 8px;
 }
 </style>
