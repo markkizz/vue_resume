@@ -1,12 +1,7 @@
 <template>
   <div>
-    <v-row>
+    <!-- <v-row>
       <v-col class="justify-center" cols="5">
-        <img
-          src="../assets/myimage.jpg"
-          alt="mark"
-          v-bind:style="{'height': '170px', 'width': '170px', 'border-radius': '50%'}"
-        />
       </v-col>
       <v-col class="name align-center" cols="7">
         <v-row>
@@ -18,10 +13,10 @@
           </v-col>
         </v-row>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-col class="desc">
-        <p style="margin: 5px 0 0 0">
+        <p style="margin: 0 0 0 0">
           &ensp;
           <v-icon color="primary" dense>fas fa-quote-left</v-icon>  My name is Kittayot Pattanapara. I'm focused on web development
           using <b>React.js and Node.js</b>. I am passionate about clean code and
