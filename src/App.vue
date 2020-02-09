@@ -34,7 +34,7 @@
           </v-col>
           <v-col cols="7">
             <v-expand-transition>
-              <v-card class="elevation raised custom-card" width="550">
+              <v-card class="elevation raised custom-card" width="600" max-width="550" >
                 <v-row>
                   <v-col class="name align-center" cols="12">
                     <v-row>
@@ -52,6 +52,7 @@
                 </v-row>
                 <!-- <Aboutme /> -->
                 <!-- <MyEducation /> -->
+                <MySkill />
               </v-card>
             </v-expand-transition>
           </v-col>
@@ -64,13 +65,15 @@
 <script>
 // import Aboutme from "./components/AboutMe";
 // import MyEducation from "./components/MyEducation";
+import MySkill from './components/MySkill'
 
 export default {
   name: "App",
 
   components: {
-    // Aboutme
-    // MyEducation
+    // Aboutme,
+    // MyEducation,
+    MySkill
   },
 
   data() {
