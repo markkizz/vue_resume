@@ -91,7 +91,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MySkill"
+};
 </script>
 
 <style scoped>
@@ -101,8 +103,4 @@ export default {};
 .custom-col {
   padding: 2px 2px;
 }
-/* .icon-group {
-  position: relative;
-  left: 100px;
-} */
 </style>

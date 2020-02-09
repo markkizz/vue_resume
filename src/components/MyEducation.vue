@@ -1,8 +1,8 @@
 <template>
     <v-timeline>
-      <v-timeline-item small right>
+      <v-timeline-item small right color="deep-orange lighten-1">
         <template>
-          <span class="title font-weight-bold" v-text="'2020'" />
+          <span class="title font-weight-bold deep-orange--text text--lighten-1" v-text="'2020'"/>
         </template>
         <div>
           <h2 class="title">Software Park CodeCamp #4</h2>
@@ -19,9 +19,9 @@
           </div>
         </div>
       </v-timeline-item>
-      <v-timeline-item small right>
+      <v-timeline-item small right color="deep-orange lighten-1">
         <template>
-          <span class="title font-weight-bold" v-text="'2019'" />
+          <span class="title font-weight-bold deep-orange--text text--lighten-1" v-text="'2019'" />
         </template>
         <div>
           <h2 class="title">Edx.org</h2>
@@ -30,7 +30,7 @@
           </div>
         </div>
       </v-timeline-item>
-      <v-timeline-item small right>
+      <v-timeline-item small right color="deep-orange lighten-1">
         <div>
           <h2 class="title">Udemy</h2>
           <div>
@@ -44,9 +44,9 @@
           </div>
         </div>
       </v-timeline-item>
-      <v-timeline-item small right>
+      <v-timeline-item small right color="deep-orange lighten-1">
         <template>
-          <span class="title font-weight-bold" v-text="'2014 - 2018'" />
+          <span class="title font-weight-bold deep-orange--text text--lighten-1" v-text="'2014 - 2018'" />
         </template>
         <div>
           <h2 class="title">Thammasat University</h2>
@@ -59,8 +59,8 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MyEducation"
+};
 </script>
 
-<style scoped>
-</style>

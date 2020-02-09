@@ -1,32 +1,17 @@
 <template>
-  <div>
-    <!-- <v-row>
-      <v-col class="justify-center" cols="5">
-      </v-col>
-      <v-col class="name align-center" cols="7">
-        <v-row>
-          <v-col cols="12" class="name">
-            <h1>Kittayot Pattanapara</h1>
-          </v-col>
-          <v-col cols="12" class="no-padding name-tag">
-            <h3>Front-end Developer</h3>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row> -->
-    <v-row>
-      <v-col class="desc">
-        <p style="margin: 0 0 0 0">
-          &ensp;
-          <v-icon color="secondary" dense>fas fa-quote-left</v-icon>  My name is Kittayot Pattanapara. I'm focused on web development
-          using <b>React.js and Node.js</b>. I am passionate about clean code and
-          professional development. I have strong skills in communication,
-          critical thinking, and I am a diligent worker with a positive attitude
-          that helps to drive projects toward success.
-        </p>
-      </v-col>
-    </v-row>
-  </div>
+  <v-row>
+    <v-col class="desc">
+      <p style="margin: 0 0 0 0">
+        &ensp;
+        <v-icon color="secondary" dense>fas fa-quote-left</v-icon>My name is Kittayot Pattanapara. I'm focused on web development
+        using
+        <b>React.js and Node.js</b>. I am passionate about clean code and
+        professional development. I have strong skills in communication,
+        critical thinking, and I am a diligent worker with a positive attitude
+        that helps to drive projects toward success.
+      </p>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

@@ -40,7 +40,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Contact"
+};
 </script>
 
 <style scoped>

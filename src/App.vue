@@ -162,7 +162,7 @@ export default {
 }
 .justify-center {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .align-center {
   display: flex;
