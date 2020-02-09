@@ -5,26 +5,16 @@
         <v-row justify="center" class="mt-10">
           <v-col cols="5" class="flex-end">
             <div class="myimage justify-center align-center">
-              <div class="center-circle">
-                <v-btn class="mx-2 ball four" fab color="secondary">
-                  <v-icon>far fa-address-card</v-icon>
-                </v-btn>
-              </div>
-              <div class="center-circle">
-                <v-btn class="mx-2 ball three" fab :color="false ? 'secondary': ''">
-                  <v-icon>fas fa-graduation-cap</v-icon>
-                </v-btn>
-              </div>
-              <div class="center-circle">
-                <v-btn class="mx-2 ball two" fab :color="false ? 'secondary': ''">
-                  <v-icon>fas fa-code</v-icon>
-                </v-btn>
-              </div>
-              <div class="center-circle">
-                <v-btn class="mx-2 ball one" fab :color="false ? 'secondary': ''">
-                  <v-icon>fas fa-phone-alt</v-icon>
-                </v-btn>
-              </div>
+                <div class="circle-center" v-for="(btn) in buttonData" :key="btn.id">
+                  <v-btn
+                    :class="`mx-2 position-absolute ${btn.className}`"
+                    fab
+                    :color="selectedBtnId===btn.id ? 'secondary' : ''"
+                    @click="handleSelect(btn.id, $event)"
+                  >
+                    <v-icon>{{ btn.icon }}</v-icon>
+                  </v-btn>
+                </div>
               <img
                 src="./assets/myimage.jpg"
                 alt="mark"
@@ -34,7 +24,7 @@
           </v-col>
           <v-col cols="7">
             <v-expand-transition>
-              <v-card class="elevation raised custom-card" width="600" max-width="550" >
+              <v-card class="elevation raised custom-card" width="550" max-width="550">
                 <v-row>
                   <v-col class="name align-center" cols="12">
                     <v-row>
@@ -50,9 +40,10 @@
                     </v-row>
                   </v-col>
                 </v-row>
-                <!-- <Aboutme /> -->
-                <!-- <MyEducation /> -->
-                <MySkill />
+                <Aboutme v-if="selectedBtnId===1" />
+                <MyEducation v-else-if="selectedBtnId===2" />
+                <MySkill v-else-if="selectedBtnId===3" />
+                <Contact v-else-if="selectedBtnId===4" />
               </v-card>
             </v-expand-transition>
           </v-col>
@@ -63,26 +54,54 @@
 </template>
 
 <script>
-// import Aboutme from "./components/AboutMe";
-// import MyEducation from "./components/MyEducation";
+import Aboutme from "./components/AboutMe";
+import MyEducation from "./components/MyEducation";
 import MySkill from './components/MySkill'
+import Contact from './components/Contact'
 
 export default {
   name: "App",
 
   components: {
-    // Aboutme,
-    // MyEducation,
-    MySkill
+    Aboutme,
+    MyEducation,
+    MySkill,
+    Contact
   },
-
   data() {
     return {
       myStyle: {
         backgroundColor: "#b55233"
       },
-      isSelect: true
+      buttonData: [
+        {
+          id: 1,
+          icon: "far fa-address-card",
+          className: "one"
+        },
+        {
+          id: 2,
+          icon: "fas fa-graduation-cap",
+          className: "two"
+        },
+        {
+          id: 3,
+          icon: "fas fa-code",
+          className: "three"
+        },
+        {
+          id: 4,
+          icon: "fas fa-phone-alt",
+          className: "four"
+        }
+      ],
+      selectedBtnId: 1
     };
+  },
+  methods: {
+    handleSelect(btnId) {
+      this.selectedBtnId = btnId
+  }
   }
 };
 </script>
@@ -102,17 +121,16 @@ export default {
 .name-tag {
   position: relative;
   top: -5px;
-  text-decoration: underline;
   font-style: italic;
 }
 .tag-color {
   color: #ff8661;
 }
-.center-circle {
+.circle-center {
   position: absolute;
-}
-.ball {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .one {
   animation-name: one-anime;
@@ -139,6 +157,9 @@ export default {
   animation-fill-mode: forwards;
 }
 
+.position-absolute {
+  position: absolute;
+}
 .justify-center {
   display: flex;
   justify-content: flex-end;
@@ -154,6 +175,39 @@ export default {
 .no-padding {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+@keyframes one-anime {
+  from {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-120deg) translateX(130px) rotate(120deg);
+  }
+}
+@keyframes two-anime {
+  from {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-160deg) translateX(130px) rotate(160deg);
+  }
+}
+@keyframes three-anime {
+  from {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-200deg) translateX(130px) rotate(200deg);
+  }
+}
+@keyframes four-anime {
+  from {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-240deg) translateX(130px) rotate(240deg);
+  }
 }
 
 /* overide */
@@ -175,36 +229,4 @@ export default {
   left: calc(50% - 228px) !important;
 }
 
-@keyframes one-anime {
-  from {
-    transform: rotate(0deg) translateX(130px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-240deg) translateX(130px) rotate(240deg);
-  }
-}
-@keyframes two-anime {
-  from {
-    transform: rotate(0deg) translateX(130px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-200deg) translateX(130px) rotate(200deg);
-  }
-}
-@keyframes three-anime {
-  from {
-    transform: rotate(0deg) translateX(130px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-160deg) translateX(130px) rotate(160deg);
-  }
-}
-@keyframes four-anime {
-  from {
-    transform: rotate(0deg) translateX(130px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-120deg) translateX(130px) rotate(120deg);
-  }
-}
 </style>
