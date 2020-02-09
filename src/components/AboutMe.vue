@@ -18,7 +18,7 @@
       <v-col class="desc">
         <p style="margin: 0 0 0 0">
           &ensp;
-          <v-icon color="primary" dense>fas fa-quote-left</v-icon>  My name is Kittayot Pattanapara. I'm focused on web development
+          <v-icon color="secondary" dense>fas fa-quote-left</v-icon>  My name is Kittayot Pattanapara. I'm focused on web development
           using <b>React.js and Node.js</b>. I am passionate about clean code and
           professional development. I have strong skills in communication,
           critical thinking, and I am a diligent worker with a positive attitude

@@ -2,7 +2,7 @@
   <v-app :style="myStyle">
     <v-content>
       <v-container class="fill-height" fluid>
-        <v-row justify="center">
+        <v-row justify="center" class="mt-10">
           <v-col cols="5" class="flex-end">
             <div class="myimage justify-center align-center">
               <div class="center-circle">
@@ -11,17 +11,17 @@
                 </v-btn>
               </div>
               <div class="center-circle">
-                <v-btn class="mx-2 ball three" fab :color="isSelect ? 'secondary': ''">
+                <v-btn class="mx-2 ball three" fab :color="false ? 'secondary': ''">
                   <v-icon>fas fa-graduation-cap</v-icon>
                 </v-btn>
               </div>
               <div class="center-circle">
-                <v-btn class="mx-2 ball two" fab :color="isSelect ? 'secondary': ''">
+                <v-btn class="mx-2 ball two" fab :color="false ? 'secondary': ''">
                   <v-icon>fas fa-code</v-icon>
                 </v-btn>
               </div>
               <div class="center-circle">
-                <v-btn class="mx-2 ball one" fab :color="isSelect ? 'secondary': ''">
+                <v-btn class="mx-2 ball one" fab :color="false ? 'secondary': ''">
                   <v-icon>fas fa-phone-alt</v-icon>
                 </v-btn>
               </div>
@@ -33,27 +33,28 @@
             </div>
           </v-col>
           <v-col cols="7">
-            <v-card class="elevation raised custom-card" width="550">
-              <v-row>
-                <v-col class="name align-center" cols="12">
-                  <v-row>
-                    <v-col cols="12">
-                      <h1>Kittayot Pattanapara</h1>
-                    </v-col>
-                    <v-col cols="12" class="no-padding name-tag">
-                      <h3>Front-end Developer</h3>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-              <Aboutme />
-            </v-card>
+            <v-expand-transition>
+              <v-card class="elevation raised custom-card" width="550">
+                <v-row>
+                  <v-col class="name align-center" cols="12">
+                    <v-row>
+                      <v-col cols="12">
+                        <h1>
+                          <span class="tag-color">&#60;</span> Kittayot Pattanapara
+                          <span class="tag-color">/&#62;</span>
+                        </h1>
+                      </v-col>
+                      <v-col cols="12" class="no-padding name-tag">
+                        <h3 class="font-weight-light">Front-end Developer</h3>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+                <!-- <Aboutme /> -->
+                <!-- <MyEducation /> -->
+              </v-card>
+            </v-expand-transition>
           </v-col>
-          <!-- <v-col class="justify-center" cols>
-            <v-card class="elevation raised custom-card" style="border-top-right-radius: 0">
-              <Aboutme />
-            </v-card>
-          </v-col>-->
         </v-row>
       </v-container>
     </v-content>
@@ -61,13 +62,15 @@
 </template>
 
 <script>
-import Aboutme from "./components/AboutMe";
+// import Aboutme from "./components/AboutMe";
+// import MyEducation from "./components/MyEducation";
 
 export default {
   name: "App",
 
   components: {
-    Aboutme
+    // Aboutme
+    // MyEducation
   },
 
   data() {
@@ -98,6 +101,9 @@ export default {
   top: -5px;
   text-decoration: underline;
   font-style: italic;
+}
+.tag-color {
+  color: #ff8661;
 }
 .center-circle {
   position: absolute;
@@ -147,12 +153,23 @@ export default {
   padding-bottom: 0;
 }
 
-.tab {
+/* overide */
+.v-timeline .theme--light {
   position: relative;
+  left: -50px;
 }
 
-.tab-space {
-  top: 8px;
+.v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item:nth-child(odd):not(.v-timeline-item--before)
+  .v-timeline-item__body,
+.v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse)
+  .v-timeline-item--after
+  .v-timeline-item__body {
+  max-width: 500px !important;
+}
+.v-application--is-ltr
+  .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse):before {
+  left: calc(50% - 228px) !important;
 }
 
 @keyframes one-anime {
