@@ -1,24 +1,13 @@
-# vue_resume
+# My Resume with VueJS
 
-## Project setup
-```
-yarn install
-```
+## 📖 Description
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+This is my resume written with VueJS
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## 💡 Getting Start
 
-### Lints and fixes files
 ```
-yarn lint
-```
+  npm install
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  npm serve
+```
