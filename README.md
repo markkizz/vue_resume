@@ -2,7 +2,7 @@
 
 ## 📖 Description
 
-This is my resume written with VueJS
+This is my resume written in VueJS
 
 ## 💡 Getting Start
 
